@@ -1,0 +1,1 @@
+http://t.me/SamGTU_startup_generator_bot
