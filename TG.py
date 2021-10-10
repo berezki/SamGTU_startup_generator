@@ -5,7 +5,7 @@ from telegram import InlineKeyboardMarkup
 from telegram import InlineKeyboardButton
 from SamgtuBot import SamgtuBot
 import sys
-
+import logging
 
 
 class TG():
@@ -21,7 +21,7 @@ class TG():
         TG.regenerateButton = InlineKeyboardButton(text='Regenerate', callback_data='1')
         TG.regenerateMarkup = InlineKeyboardMarkup(inline_keyboard=[[TG.regenerateButton]])
 
-        print('buttons are created')
+        logging.info('buttons are created')
 
     def button(update, context):
         query = update.callback_query
@@ -41,10 +41,10 @@ class TG():
         TG.dispatcher.add_handler(startup_handler)
         TG.dispatcher.add_handler(CallbackQueryHandler(TG.button))
 
-        print('handlers are added')
+        logging.info('handlers are added')
     
     def start_bot():
         TG.create_buttons()
         TG.add_handlers()
         TG.updater.start_polling()
-        print('bot is started')
+        logging.info('bot is started')

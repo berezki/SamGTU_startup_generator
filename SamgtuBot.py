@@ -1,6 +1,7 @@
 from json import load
 from random import choice
-from pydantic import BaseModel 
+from pydantic import BaseModel
+import logging
 
 class Data(BaseModel):
     token: str
@@ -21,7 +22,7 @@ class SamgtuBot:
 
         SamgtuBot.data = Data(**data_dict)
 
-        print('data is loaded ')
+        logging.info('data is loaded ')
 
         
     def generateIdea() -> str:
