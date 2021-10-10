@@ -6,6 +6,7 @@ from telegram import InlineKeyboardButton
 from SamgtuBot import SamgtuBot
 import sys
 import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class TG():

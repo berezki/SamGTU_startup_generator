@@ -2,8 +2,9 @@ from json import load
 from random import choice
 from typing import Optional
 from pydantic import BaseModel
-import logging
 import sys
+import logging
+logging.basicConfig(level=logging.INFO)
 
 class Data(BaseModel):
     token: Optional[str]
