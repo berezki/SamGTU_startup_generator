@@ -1,1 +1,1 @@
-bot: python3 main.py $TOKEN
+bot: python main.py $TOKEN
