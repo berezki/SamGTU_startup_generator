@@ -1,10 +1,12 @@
 from json import load
 from random import choice
+from typing import Optional
 from pydantic import BaseModel
 import logging
+import sys
 
 class Data(BaseModel):
-    token: str
+    token: Optional[str]
     first: list
     second: list
 
@@ -14,14 +16,11 @@ class SamgtuBot:
 
     def loadData():
 
-        with open('data/config.json', encoding='utf-8') as cfg:
-            config_dict = load(cfg)
         with open('data/dataset.json', encoding='utf-8') as ds:
-            dataset_dict = load(ds)
-        data_dict = config_dict | dataset_dict
-
-        SamgtuBot.data = Data(**data_dict)
-
+            data_dict = load(ds)
+            SamgtuBot.data = Data(**data_dict)
+        SamgtuBot.data.token = sys.argv[1]
+        
         logging.info('data is loaded ')
 
         

@@ -16,7 +16,7 @@ class TG():
 
 
     def create_buttons():
-        TG.updater = Updater(token=sys.argv[1], use_context=True)
+        TG.updater = Updater(token=SamgtuBot.data.token, use_context=True)
         TG.dispatcher = TG.updater.dispatcher
         TG.regenerateButton = InlineKeyboardButton(text='Regenerate', callback_data='1')
         TG.regenerateMarkup = InlineKeyboardMarkup(inline_keyboard=[[TG.regenerateButton]])
